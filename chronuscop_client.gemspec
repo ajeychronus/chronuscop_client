@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_chronuscop_client.rb"
   ]
-  s.homepage = %q{http://github.com/ajey/chronuscop_client}
+  s.homepage = %q{http://github.com/ajeychronus/chronuscop_client}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
