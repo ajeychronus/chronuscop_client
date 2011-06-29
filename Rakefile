@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "chronuscop_client"
   gem.homepage = "http://github.com/ajey/chronuscop_client"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "chronuscop_client gem to easily integrate your rails app with the chronuscop server."
+  gem.description = "This gem helps you to easily tweak your rails app to use the chronuscop server."
   gem.email = "ajey@chronus.com"
   gem.authors = ["ajey"]
   # dependencies defined in Gemfile
