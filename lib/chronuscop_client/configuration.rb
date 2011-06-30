@@ -19,6 +19,9 @@ module ChronuscopClient
     # The api token.
     attr_accessor :api_token
 
+    # The project number.(in the chronuscop server.)
+    attr_accessor :project_number
+
     # The chronuscop server address.
     attr_accessor :chronuscop_server_address
 
@@ -26,11 +29,15 @@ module ChronuscopClient
     attr_accessor :rails_environment
 
     # The rails root directory.
+    attr_accessor :rails_root_dir
 
-
-    def initialize              # the constructor
+    # setting configuration values.
+    def set_all_values
+      self.redis_db_number = 0
+      self.redis_server_port = 6379
+      self.yaml_file_location = "#{self.rails_root_dir}/config/locales/en.yml"
+      self.chronuscop_server_address = "http://localhost:3000"
     end
-
 
   end
 
