@@ -6,6 +6,9 @@ module ChronuscopClient
     # The configuration object stores all the configuration information.
     attr_accessor :configuration_object
 
+    # The synchronizer object.
+    attr_accessor :synchronizer_object
+
   end
 
   def self.test

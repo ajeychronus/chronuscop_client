@@ -2,6 +2,7 @@ require 'rubygems'
 require 'mechanize'             # this is the http-client used.
 require 'xmlsimple'             # necessary to parse xml response from the server.
 require 'redis'                 # Redis client to interact with the redis key-value store.
+requier 'yaml'
 
 # The configuration class which stores all the configurable options for the chronuscop client.
 module ChronuscopClient
@@ -31,14 +32,15 @@ module ChronuscopClient
     # The rails root directory.
     attr_accessor :rails_root_dir
 
-    # setting configuration values.
-    def set_all_values
-      self.redis_db_number = 0
-      self.redis_server_port = 6379
-      self.yaml_file_location = "#{self.rails_root_dir}/config/locales/en.yml"
-      self.chronuscop_server_address = "http://localhost:3000"
+    # rails root directory must be set before calling this.
+    def load_yaml_configuration
+      YAML_CONFIG = YAML.load_file("#{@rails_root_dir}/app/config/chronuscop.yml")
+      @redis_db_number = YAML_CONFIG[@rails_environment]['redis_db_number']
+      @redis_server_port = YAML_CONFIG[@rails_environment]['redis_server_port']
+      @project_number = YAML_CONFIG[@rails_environment]['project_number']
+      @api_token = YAML_CONFIG[@rails_environment]['api_token']
     end
 
-  end
 
+  end
 end

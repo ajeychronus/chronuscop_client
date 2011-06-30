@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "lib/chronuscop_client.rb",
     "lib/chronuscop_client/configuration.rb",
     "lib/chronuscop_client/railtie.rb",
+    "lib/chronuscop_client/synchronizer.rb",
     "lib/tasks/chronuscop_client_tasks.rake",
     "test/helper.rb",
     "test/test_chronuscop_client.rb"
