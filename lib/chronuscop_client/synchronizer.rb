@@ -16,7 +16,7 @@ module ChronuscopClient
     def keep_in_sync
 
       agent = Mechanize.new           # creating a new Mechanize agent object.
-      redis_agent = Redis.new         # creating a redis client object.
+      redis_agent = Redis.new         # creating a redis client object.s
 
       for i in 1..30 do
         sleep(10)
