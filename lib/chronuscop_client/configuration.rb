@@ -1,8 +1,8 @@
 # requiring gem dependencies.
 require 'rubygems'
-require 'mechanize'             # this is the http-client used.
-require 'xmlsimple'             # necessary to parse xml response from the server.
-require 'redis'                 # Redis client to interact with the redis key-value store.
+# require 'mechanize'             # this is the http-client used.
+# require 'xmlsimple'             # necessary to parse xml response from the server.
+# require 'redis'                 # Redis client to interact with the redis key-value store.
 requier 'yaml'
 
 # requiring other files.
