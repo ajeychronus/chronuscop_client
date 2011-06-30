@@ -7,7 +7,7 @@ module ChronuscopClient
     initializer :initialize_chronuscop_rails, :after => :before_initialize do |app|
 
       # to be removed.
-      puts "Initializing the chronuscop client."
+      puts "Initializing the chronuscop clients."
 
       # creating a new configuration object.
       ChronuscopClient.configuration_object = ChronuscopClient::Configuration.new
@@ -26,6 +26,7 @@ module ChronuscopClient
 
       # creating a new synchronizer object.
       ChronuscopClient.synchronizer_object = ChronuscopClient::Synchronizer.new
+      ChronuscopClient.synchronizer_object.start
 
 
 
