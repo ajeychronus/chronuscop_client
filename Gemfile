@@ -1,7 +1,16 @@
 source "http://rubygems.org"
-# Add dependencies required to use your gem here.
-# Example:
-#   gem "activesupport", ">= 2.3.5"
+
+# These are runtime-dependencies (i.e these gems are necessary to use the chronucop_client gem / plugin )
+# The following versions have been tested.
+# gem 'mechanize','1.0.0'
+# gem 'xml-simple', '1.0.15'
+# gem 'redis', '2.2.1'
+
+gem 'mechanize'
+gem 'xml-simple'
+gem 'redis'
+
+
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

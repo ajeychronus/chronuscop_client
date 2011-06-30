@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "chronuscop_client.gemspec",
     "lib/chronuscop_client.rb",
     "lib/chronuscop_client/railtie.rb",
+    "lib/tasks/chronuscop_client_tasks.rake",
     "test/helper.rb",
     "test/test_chronuscop_client.rb"
   ]
