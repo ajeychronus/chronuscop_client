@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["ajey"]
-  s.date = %q{2011-06-29}
+  s.date = %q{2011-06-30}
   s.description = %q{This gem helps you to easily tweak your rails app to use the chronuscop server.}
   s.email = %q{ajey@chronus.com}
   s.extra_rdoc_files = [
@@ -19,15 +19,18 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "chronuscop_client.gemspec",
     "lib/chronuscop_client.rb",
+    "lib/chronuscop_client/railtie.rb",
     "test/helper.rb",
     "test/test_chronuscop_client.rb"
   ]
-  s.homepage = %q{http://github.com/ajeychronus/chronuscop_client}
+  s.homepage = %q{http://github.com/ajey/chronuscop_client}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
