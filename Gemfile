@@ -6,9 +6,9 @@ source "http://rubygems.org"
 # gem 'xml-simple', '1.0.15'
 # gem 'redis', '2.2.1'
 
-gem 'mechanize'
-gem 'xml-simple'
-gem 'redis'
+gem 'mechanize','1.0.0'
+gem 'xml-simple','1.0.15'
+gem 'redis','2.2.1'
 
 
 
