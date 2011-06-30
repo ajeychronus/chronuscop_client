@@ -1,3 +1,5 @@
+require 'chronuscop_client/configuration'
+
 module ChronuscopClient
 
   # defining necessary objects which will be used.
