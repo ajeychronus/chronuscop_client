@@ -38,7 +38,7 @@ module ChronuscopClient
 
     # rails root directory must be set before calling this.
     def load_yaml_configuration
-      yaml_config = YAML.load_file("#{@rails_root_dir}/app/config/chronuscop.yml")
+      yaml_config = YAML.load_file("#{@rails_root_dir}/config/chronuscop.yml")
       @redis_db_number = yaml_config[@rails_environment]['redis_db_number']
       @redis_server_port = yaml_config[@rails_environment]['redis_server_port']
       @project_number = yaml_config[@rails_environment]['project_number']
