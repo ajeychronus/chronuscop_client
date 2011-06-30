@@ -20,7 +20,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0.0)
   jeweler (~> 1.6.2)
-  mechanize
+  mechanize (= 1.0.0)
   rcov
-  redis
-  xml-simple
+  redis (= 2.2.1)
+  xml-simple (= 1.0.15)
