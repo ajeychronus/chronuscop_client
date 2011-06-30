@@ -3,7 +3,7 @@ require 'rubygems'
 # require 'mechanize'             # this is the http-client used.
 # require 'xmlsimple'             # necessary to parse xml response from the server.
 # require 'redis'                 # Redis client to interact with the redis key-value store.
-requier 'yaml'
+require 'yaml'
 
 # requiring other files.
 require 'chronuscop_client/synchronizer'
