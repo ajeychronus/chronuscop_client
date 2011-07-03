@@ -1,9 +1,11 @@
 = chronuscop_client
 
-Description goes here.
+Note:
+* You will have to run the rake task to upload the keys to the chronuscop-server after changing to
+  your app's root directory.
 
 == Contributing to chronuscop_client
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project

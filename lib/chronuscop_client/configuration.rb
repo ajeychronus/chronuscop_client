@@ -4,6 +4,7 @@ require 'yaml'
 
 # requiring other files.
 require 'chronuscop_client/synchronizer'
+require 'chronuscop_client/railtie' if defined?(Rails)
 
 # The configuration class which stores all the configurable options for the chronuscop client.
 module ChronuscopClient
