@@ -53,7 +53,9 @@ namespace :chronuscop do
     txs = XmlSimple.xml_out(one_dim_hash)
 
     mechanize_agent = Mechanize.new
-    mechanize_agent.post("#{chronuscop_config[RAILS_ENV]["chronuscop_server_address"]}/projects/#{chronuscop_config[RAILS_ENV]["project_number"]}/translations/add/?auth_token=#{chronuscop_config[RAILS_ENV]["api_token"]}","translations_xml_string" => txs)
+    puts "#{chronuscop_config[RAILS_ENV]["chronuscop_server_address"]}/projects/#{chronuscop_config[RAILS_ENV]["project_number"]}/translations/add/?auth_token=#{chronuscop_config[RAILS_ENV]["api_token"]}"
+
+#    mechanize_agent.post("#{chronuscop_config[RAILS_ENV]["chronuscop_server_address"]}/projects/#{chronuscop_config[RAILS_ENV]["project_number"]}/translations/add/?auth_token=#{chronuscop_config[RAILS_ENV]["api_token"]}","translations_xml_string" => txs)
 
   end
 end
