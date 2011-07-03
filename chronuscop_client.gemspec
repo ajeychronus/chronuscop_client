@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "chronuscop_client.gemspec",
     "lib/chronuscop_client.rb",
+    "lib/chronuscop_client/chronus_backend.rb",
     "lib/chronuscop_client/configuration.rb",
     "lib/chronuscop_client/railtie.rb",
     "lib/chronuscop_client/synchronizer.rb",

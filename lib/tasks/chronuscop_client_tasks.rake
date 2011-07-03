@@ -44,7 +44,9 @@ namespace :chronuscop do
     redis_agent = Redis.new(:db => chronuscop_config[RAILS_ENV]["redis_db_number"])
     one_dim_hash.each do |key,value|
       new_key = key.sub(/default/,"en")
-      redis_agent[new_key] = value
+      if(!redis_agent[new_key]) then # If nil then assign default value.
+        redis_agent[new_key] = value
+      end
     end
 
     # converting the 1-D hash into xml string.
