@@ -21,9 +21,6 @@ module ChronuscopClient
       # reading redis database number from the YAML file (app/config/chronuscop.yml)
       ChronuscopClient.configuration_object.load_yaml_configuration
 
-      # TODO. A better method should be employed.
-      ChronuscopClient.configuration_object.chronuscop_server_address = "http://localhost:3000"
-
       # creating a new synchronizer object.
       ChronuscopClient.synchronizer_object = ChronuscopClient::Synchronizer.new
       ChronuscopClient.synchronizer_object.start

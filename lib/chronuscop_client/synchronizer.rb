@@ -20,10 +20,10 @@ module ChronuscopClient
 
       for i in 1..30 do
         sleep(10)
-        puts "synchronizing"
+        puts "Attempt Sync"
 
         # querying the page.
-        page = agent.get("http://localhost:3000/projects/1/translations.xml/?auth_token=GwmHVIW7iAuWpHGVo-zO")
+        page = agent.get("#{ChronuscopClient.configuration_object.chronuscop_server_address}/projects/#{ChronuscopClient.configuration_object.project_number}/translations.xml/?auth_token=#{ChronuscopClient.configuration_object.api_token}")
 
         # converting the returned xml page into a hash.
         words_hash = XmlSimple.xml_in(page.body)
@@ -34,10 +34,9 @@ module ChronuscopClient
         # inserting all translations into the redis database.
         all_translations.each do |t|
           redis_agent.set "#{t["key"]}","#{t["value"]}"
-          puts "Finished synchronizing"
         end
 
-
+        puts "Finished synchronizing !!!"
       end
     end
 

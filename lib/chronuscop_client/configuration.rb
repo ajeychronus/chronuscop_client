@@ -41,6 +41,7 @@ module ChronuscopClient
       @redis_server_port = yaml_config[@rails_environment]['redis_server_port']
       @project_number = yaml_config[@rails_environment]['project_number']
       @api_token = yaml_config[@rails_environment]['api_token']
+      @chronuscop_server_address = yaml_config[@rails_environment]['chronuscop_server_address']
     end
 
 
