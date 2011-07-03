@@ -4,6 +4,33 @@ Note:
 * You will have to run the rake task to upload the keys to the chronuscop-server after changing to
   your app's root directory.
 
+Sample chronuscop.yml config looks like this.
+development:
+  redis_db_number: 0
+  redis_server_port: 0
+  project_number: 1
+  api_token: OWPrhg3M8fjsB16K1bke
+  chronuscop_server_address: http://localhost:3000
+  sync_time_interval: 10
+
+test:
+  redis_db_number: 0
+  redis_server_port: 0
+  project_number: 1
+  api_token: OWPrhg3M8fjsB16K1bke
+  chronuscop_server_address: http://localhost:3000
+  sync_time_interval: 10
+
+production:
+  redis_db_number: 0
+  redis_server_port: 0
+  project_number: 1
+  api_token: QVVBg5tYjbUHtb5LVQxg
+  chronuscop_server_address: http://localhost:3000
+  sync_time_interval: 300
+
+
+
 == Contributing to chronuscop_client
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
