@@ -18,15 +18,12 @@ module ChronuscopClient
       # setting the rails environment.
       ChronuscopClient.configuration_object.rails_environment = ::Rails.env
 
-      # reading redis database number from the YAML file (app/config/chronuscop.yml)
+      # reading the YAML file (app/config/chronuscop.yml)
       ChronuscopClient.configuration_object.load_yaml_configuration
 
       # creating a new synchronizer object.
-      ChronuscopClient.synchronizer_object = ChronuscopClient::Synchronizer.new
+      ChronuscopClient.synchronizer_object = ChronuscopClient::Synchronizer.new(ChronuscopClient.configuration_object.redis_db_number)
       ChronuscopClient.synchronizer_object.start
-
-
-
     end
 
     rake_tasks do

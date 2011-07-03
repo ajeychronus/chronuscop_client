@@ -34,6 +34,9 @@ module ChronuscopClient
     # The rails root directory.
     attr_accessor :rails_root_dir
 
+    # The time between successive synchronizations.
+    attr_accessor :sync_time_interval
+
     # rails root directory must be set before calling this.
     def load_yaml_configuration
       yaml_config = YAML.load_file("#{@rails_root_dir}/config/chronuscop.yml")
@@ -42,6 +45,7 @@ module ChronuscopClient
       @project_number = yaml_config[@rails_environment]['project_number']
       @api_token = yaml_config[@rails_environment]['api_token']
       @chronuscop_server_address = yaml_config[@rails_environment]['chronuscop_server_address']
+      @sync_time_interval = yaml_config[@rails_environment]['sync_time_interval']
     end
 
 
