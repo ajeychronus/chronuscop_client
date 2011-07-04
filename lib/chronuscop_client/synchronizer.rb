@@ -96,7 +96,7 @@ module ChronuscopClient
         end
 
       end
-
+      puts "Writing the last_update_value of #{last_update_value}"
       # Writing the value of last_update_at to the file.
       write_last_update(last_update_at)
 
