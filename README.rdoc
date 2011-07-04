@@ -30,6 +30,11 @@ production:
   sync_time_interval: 300
 
 
+* The chronuscop_client uses a temporary file located in RAILS_ROOT/tmp/chronuscop.tmp for
+  writing the last synchronization time. Make sure that the tmp directory is present in
+  the rails root directory. If it is not present, create one.
+
+
 
 == Contributing to chronuscop_client
 
