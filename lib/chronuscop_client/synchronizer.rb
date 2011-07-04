@@ -54,6 +54,20 @@ module ChronuscopClient
       end
     end
 
+    # To convert xml_time received from the server to integer.
+    def xml_time_to_integer(str)
+      arr = str.gsub(/T|Z|:/,"-").split(/-/)
+      year = arr[0]
+      month = arr[1]
+      day = arr[2]
+      hour  = arr[3]
+      min   = arr[4]
+      sec   = arr[5]
+      Time.utc(year,month,day,hour,min,sec).to_i
+    end
+
+
+
     # This method keeps the remote-keys and the local-keys synchronized.
     # This method should be called only after initializing the configuration
     # object as it uses those configuration values.
@@ -84,20 +98,22 @@ module ChronuscopClient
         return
       end
 
-      last_update_at = Time.at(last_update_at.to_i)
 
       all_translations.each do |t|
         # Inserting into the redis store.
         @redis_agent.set "#{t["key"]}","#{t["value"]}"
 
+        # Bad hack used here. Should fix this.
+        str = t["updated-at"][0]["content"]
+        key_updated_at = xml_time_to_integer(str)
+
         # Updating the value last_update_at
-        if(t.updated_at > last_update_at) then
-          last_update_at = t.updated_at
+        if(key_updated_at > last_update_at) then
+          last_update_at = key_updated_at
         end
 
       end
 
-      puts "Writing the last_update_value of #{last_update_value}"
       # Writing the value of last_update_at to the file.
       write_last_update(last_update_at.to_i)
       puts "Finished synchronizing !!!"
