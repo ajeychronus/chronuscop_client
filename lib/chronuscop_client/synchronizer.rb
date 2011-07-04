@@ -63,8 +63,6 @@ module ChronuscopClient
       # Getting the last sync value.
       last_update_at = get_last_update_at
 
-      puts last_update_at
-
       # querying the page.
       page = @mechanize_agent.get("#{ChronuscopClient.configuration_object.chronuscop_server_address}/projects/#{ChronuscopClient.configuration_object.project_number}/translations.xml/?auth_token=#{ChronuscopClient.configuration_object.api_token}&last_update_at=#{last_update_at}")
 
@@ -86,11 +84,9 @@ module ChronuscopClient
         return
       end
 
-
-      puts all_translations.size
+      last_update_at = Time.at(last_update_at.to_i)
 
       all_translations.each do |t|
-
         # Inserting into the redis store.
         @redis_agent.set "#{t["key"]}","#{t["value"]}"
 
@@ -103,9 +99,7 @@ module ChronuscopClient
 
       puts "Writing the last_update_value of #{last_update_value}"
       # Writing the value of last_update_at to the file.
-      write_last_update(last_update_at)
-
-
+      write_last_update(last_update_at.to_i)
       puts "Finished synchronizing !!!"
     end
 
