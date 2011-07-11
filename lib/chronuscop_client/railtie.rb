@@ -21,6 +21,9 @@ module ChronuscopClient
       # reading the YAML file (app/config/chronuscop.yml)
       ChronuscopClient.configuration_object.load_yaml_configuration
 
+      # Setting the I18n backend for the rails application.
+      I18n.backend = I18n::Backend::KeyValue.new(Redis.new(:db => ChronuscopClient.configuration_object.redis_db_number))
+
       # creating a new synchronizer object.
       ChronuscopClient.synchronizer_object = ChronuscopClient::Synchronizer.new(ChronuscopClient.configuration_object.redis_db_number)
       ChronuscopClient.synchronizer_object.start
